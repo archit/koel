@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class ABKJukeboxViewController;
+
 @interface ABKAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) ABKJukeboxViewController *mainViewController;
 
 @end

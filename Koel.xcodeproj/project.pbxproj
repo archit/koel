@@ -16,6 +16,8 @@
 		79BDC26C17977773001EE1A4 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 79BDC26B17977773001EE1A4 /* Default.png */; };
 		79BDC26E17977773001EE1A4 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79BDC26D17977773001EE1A4 /* Default@2x.png */; };
 		79BDC27017977773001EE1A4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79BDC26F17977773001EE1A4 /* Default-568h@2x.png */; };
+		79BDC279179778AC001EE1A4 /* ABKJukeboxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BDC277179778AC001EE1A4 /* ABKJukeboxViewController.m */; };
+		79BDC27A179778AC001EE1A4 /* ABKJukeboxViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79BDC278179778AC001EE1A4 /* ABKJukeboxViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,9 @@
 		79BDC26B17977773001EE1A4 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		79BDC26D17977773001EE1A4 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		79BDC26F17977773001EE1A4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		79BDC276179778AC001EE1A4 /* ABKJukeboxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABKJukeboxViewController.h; path = ../ABKJukeboxViewController.h; sourceTree = "<group>"; };
+		79BDC277179778AC001EE1A4 /* ABKJukeboxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ABKJukeboxViewController.m; path = ../ABKJukeboxViewController.m; sourceTree = "<group>"; };
+		79BDC278179778AC001EE1A4 /* ABKJukeboxViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ABKJukeboxViewController.xib; path = ../ABKJukeboxViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +83,9 @@
 		79BDC25F17977773001EE1A4 /* Koel */ = {
 			isa = PBXGroup;
 			children = (
+				79BDC276179778AC001EE1A4 /* ABKJukeboxViewController.h */,
+				79BDC277179778AC001EE1A4 /* ABKJukeboxViewController.m */,
+				79BDC278179778AC001EE1A4 /* ABKJukeboxViewController.xib */,
 				79BDC26817977773001EE1A4 /* ABKAppDelegate.h */,
 				79BDC26917977773001EE1A4 /* ABKAppDelegate.m */,
 				79BDC26017977773001EE1A4 /* Supporting Files */,
@@ -155,6 +163,7 @@
 				79BDC26C17977773001EE1A4 /* Default.png in Resources */,
 				79BDC26E17977773001EE1A4 /* Default@2x.png in Resources */,
 				79BDC27017977773001EE1A4 /* Default-568h@2x.png in Resources */,
+				79BDC27A179778AC001EE1A4 /* ABKJukeboxViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +176,7 @@
 			files = (
 				79BDC26617977773001EE1A4 /* main.m in Sources */,
 				79BDC26A17977773001EE1A4 /* ABKAppDelegate.m in Sources */,
+				79BDC279179778AC001EE1A4 /* ABKJukeboxViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +291,7 @@
 				79BDC27517977774001EE1A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

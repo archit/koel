@@ -7,6 +7,7 @@
 //
 
 #import "ABKAppDelegate.h"
+#import "ABKJukeboxViewController.h"
 
 @implementation ABKAppDelegate
 
@@ -15,6 +16,11 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    self.mainViewController = [[ABKJukeboxViewController alloc] initWithNibName:@"ABKJukeboxViewController" bundle:nil];
+    CGRect mainViewFrame = self.mainViewController.view.frame;
+    mainViewFrame.origin.y += [UIApplication sharedApplication].statusBarFrame.size.height;
+    self.mainViewController.view.frame = mainViewFrame;
+    [self.window addSubview:self.mainViewController.view];
     [self.window makeKeyAndVisible];
     return YES;
 }
