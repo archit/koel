@@ -84,7 +84,7 @@
 
 -(void)updateVolume:(float)level
 {
-    [self.volumeControl setValue:level];
+    [self.volumeControl setValue:level animated:YES];
 }
 
 @end
