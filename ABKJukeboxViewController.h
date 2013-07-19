@@ -25,4 +25,6 @@
 -(IBAction)handleSkipSong:(id)sender;
 -(IBAction)handleLikeSong:(id)sender;
 -(IBAction)handleVolume:(id)sender;
+
+
 @end

@@ -11,11 +11,6 @@
 #import "UIImageView+AFNetworking.h"
 #import "SSPullToRefresh.h"
 
-
-@interface ABKJukeboxViewController ()
-
-@end
-
 @implementation ABKJukeboxViewController
 
 @synthesize pullToRefresh = _pullToRefresh;
@@ -52,20 +47,7 @@
     self.pullToRefresh = nil;
 }
 
--(IBAction)handleLikeSong:(id)sender
-{
-    [ABKJukeboxResource likeSong];
-}
-
--(IBAction)handleSkipSong:(id)sender
-{
-    [ABKJukeboxResource skipSong];
-}
-
--(IBAction)handleVolume:(UISlider *)sender
-{
-    [ABKJukeboxResource setVolume:[sender value]];
-}
+#pragma mark -- UI updaters
 
 -(void)updateViewWithJSON:(id)JSON
 {
@@ -96,10 +78,24 @@
     [self.volumeControl setValue:level animated:YES];
 }
 
-/**
- The pull to refresh view started loading. You should kick off whatever you need to load when this is called.
- */
-- (void)pullToRefreshViewDidStartLoading:(SSPullToRefreshView *)view
+#pragma mark -- Event Handlers
+
+-(IBAction)handleLikeSong:(id)sender
+{
+    [ABKJukeboxResource likeSong];
+}
+
+-(IBAction)handleSkipSong:(id)sender
+{
+    [ABKJukeboxResource skipSong];
+}
+
+-(IBAction)handleVolume:(UISlider *)sender
+{
+    [ABKJukeboxResource setVolume:[sender value]];
+}
+
+-(void)pullToRefreshViewDidStartLoading:(SSPullToRefreshView *)view
 {
     [ABKJukeboxResource getCurrentPlayWithSuccess:^(AFHTTPRequestOperation *operation, id JSON) {
         [self updateViewWithJSON: JSON];
