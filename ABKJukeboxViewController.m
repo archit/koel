@@ -8,6 +8,7 @@
 
 #import "ABKJukeboxViewController.h"
 #import "ABKJukeboxResource.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface ABKJukeboxViewController ()
 
@@ -33,10 +34,16 @@
         NSLog(@"song: %@", song);
         NSString *songName   = [song valueForKey:@"title"];
         NSString *artistName = [song valueForKey:@"artist"];
-        NSString *albumName  = [JSON valueForKeyPath:@"album"];
-        self.titleLabel.text = songName;
-        self.albumLabel.text = albumName;
-        self.artistLabel.text = artistName;
+        NSString *albumName  = [song valueForKey:@"album"];
+        NSString *cdArtUrl   = [song valueForKey:@"cover_url"];
+        if (songName != nil)
+            self.titleLabel.text = songName;
+        if (albumName != nil)
+            self.albumLabel.text = albumName;
+        if (artistName != nil)
+            self.artistLabel.text = artistName;
+        if (cdArtUrl != nil)
+            [self.cdArt setImageWithURL:[NSURL URLWithString:cdArtUrl]];
     } failure:nil];
 }
 
@@ -58,7 +65,7 @@
 
 -(IBAction)handleVolume:(UISlider *)sender
 {
-    [ABKJukeboxResource setVolume:(int)[sender value]];
+    [ABKJukeboxResource setVolume:[sender value]];
 }
 
 @end

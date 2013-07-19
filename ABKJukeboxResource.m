@@ -49,7 +49,7 @@ static NSString * const kWarbleBaseUrl = @"http://warble.local:3000/";
 
 +(void)setVolume:(int)level
 {
-    NSLog(@"Send volume=%@", level);
+    NSLog(@"Send volume=%i", level);
 }
 
 @end
