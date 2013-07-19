@@ -29,6 +29,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self.volumeControl setThumbImage:[UIImage imageNamed:@"slider-button.png"] forState:UIControlStateNormal];
+    [self.volumeControl setMinimumTrackImage:[UIImage imageNamed:@"slider-bg.png"] forState:UIControlStateNormal];
+    [self.volumeControl setMaximumTrackImage:[UIImage imageNamed:@"slider-bg.png"] forState:UIControlStateNormal];
     [ABKJukeboxResource getCurrentPlayWithSuccess:^(AFHTTPRequestOperation *operation, id JSON) {
         [self updateViewWithJSON: JSON];
     } failure:nil];
