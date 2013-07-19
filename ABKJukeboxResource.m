@@ -9,7 +9,7 @@
 #import "ABKJukeboxResource.h"
 #import "AFJSONRequestOperation.h"
 
-static NSString * const kWarbleBaseUrl = @"http://warble.local:3000/";
+static NSString * const kWarbleJukeboxBaseUrl = @"http://warble.local:3000/jukebox";
 
 @implementation ABKJukeboxResource
 
@@ -17,13 +17,13 @@ static NSString * const kWarbleBaseUrl = @"http://warble.local:3000/";
     static ABKJukeboxResource *_sharedClient = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _sharedClient = [[ABKJukeboxResource alloc] initWithBaseURL:[NSURL URLWithString:kWarbleBaseUrl]];
+        _sharedClient = [[ABKJukeboxResource alloc] initWithBaseURL:[NSURL URLWithString:kWarbleJukeboxBaseUrl]];
     });
     
     return _sharedClient;
 }
 
--(id)initWithBaseUrl:(NSURL *)url {
+-(id)initWithBaseURL:(NSURL *)url {
     self = [super initWithBaseURL:url];
     if (!self) {
         return nil;
@@ -36,20 +36,25 @@ static NSString * const kWarbleBaseUrl = @"http://warble.local:3000/";
     return self;
 }
 
-+(void)getCurrentPlayWithSuccess:(void (^)(NSURLRequest *request, NSHTTPURLResponse *response, id JSON))success
-                       failure:(void (^)(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON))failure
++(void)getCurrentPlayWithSuccess:(void (^)(AFHTTPRequestOperation *operation, id JSON))success
+                       failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
 {
-    NSURL *url = [NSURL URLWithString:@"http://warble.local:3000/jukebox"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    
-    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:success failure:failure];
-    
-    return [operation start];
+    NSLog(@"Fetching jukebox state...");
+    ABKJukeboxResource *client = [ABKJukeboxResource sharedClient];
+    return [client getPath:nil parameters:nil success:success failure:failure];
 }
 
 +(void)setVolume:(int)level
 {
     NSLog(@"Send volume=%i", level);
+    ABKJukeboxResource *client = [ABKJukeboxResource sharedClient];
+    [client putPath:@"volume" parameters:@{@"value": [NSString stringWithFormat:@"%d",level]} success:nil failure:nil];
 }
 
++(void)skipSong
+{
+    NSLog(@"Skipping song...");
+    ABKJukeboxResource *client = [ABKJukeboxResource sharedClient];
+    return [client postPath:@"skip" parameters:nil success:nil failure:nil];
+}
 @end

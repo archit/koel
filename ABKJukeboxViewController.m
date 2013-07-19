@@ -29,9 +29,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [ABKJukeboxResource getCurrentPlayWithSuccess:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+    [ABKJukeboxResource getCurrentPlayWithSuccess:^(AFHTTPRequestOperation *operation, id JSON) {
         [self updateViewWithJSON: JSON];
-            } failure:nil];
+    } failure:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,7 +47,7 @@
 
 -(IBAction)handleSkipSong:(id)sender
 {
-    
+    [ABKJukeboxResource skipSong];
 }
 
 -(IBAction)handleVolume:(UISlider *)sender

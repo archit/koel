@@ -11,7 +11,11 @@
 
 @interface ABKJukeboxResource : AFHTTPClient
 
+-initWithBaseURL:(NSURL *)url;
+
 +(void)setVolume:(int)level;
-+(void)getCurrentPlayWithSuccess:(void (^)(NSURLRequest *request, NSHTTPURLResponse *response, id JSON))success
-                         failure:(void (^)(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON))failure;
++(void)getCurrentPlayWithSuccess:(void (^)(AFHTTPRequestOperation *operation, id JSON))success
+                         failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
++(void)skipSong;
+
 @end
