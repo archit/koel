@@ -9,12 +9,16 @@
 #import "ABKJukeboxViewController.h"
 #import "ABKJukeboxResource.h"
 #import "UIImageView+AFNetworking.h"
+#import "SSPullToRefresh.h"
+
 
 @interface ABKJukeboxViewController ()
 
 @end
 
 @implementation ABKJukeboxViewController
+
+@synthesize pullToRefresh = _pullToRefresh;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,7 +37,8 @@
     [self.volumeControl setMinimumTrackImage:[UIImage imageNamed:@"slider-bg.png"] forState:UIControlStateNormal];
     [self.volumeControl setMaximumTrackImage:[UIImage imageNamed:@"slider-bg.png"] forState:UIControlStateNormal];
     
-    [(UIScrollView *)self.view setContentSize:CGSizeMake(320, 460)];
+    [(UIScrollView *)self.view setContentSize:CGSizeMake(320, 500)];
+    self.pullToRefresh = [[SSPullToRefreshView alloc] initWithScrollView:(UIScrollView *)self.view delegate:(id)self];
     
     [ABKJukeboxResource getCurrentPlayWithSuccess:^(AFHTTPRequestOperation *operation, id JSON) {
         [self updateViewWithJSON: JSON];
@@ -44,6 +49,7 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    self.pullToRefresh = nil;
 }
 
 -(IBAction)handleLikeSong:(id)sender
@@ -88,6 +94,17 @@
 -(void)updateVolume:(float)level
 {
     [self.volumeControl setValue:level animated:YES];
+}
+
+/**
+ The pull to refresh view started loading. You should kick off whatever you need to load when this is called.
+ */
+- (void)pullToRefreshViewDidStartLoading:(SSPullToRefreshView *)view
+{
+    [ABKJukeboxResource getCurrentPlayWithSuccess:^(AFHTTPRequestOperation *operation, id JSON) {
+        [self updateViewWithJSON: JSON];
+        [view finishLoading];
+    } failure:nil];
 }
 
 @end

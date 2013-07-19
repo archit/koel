@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SSPullToRefresh.h"
 
-@interface ABKJukeboxViewController : UIViewController
+@class SSPullToRefreshView;
+
+@interface ABKJukeboxViewController : UIViewController <SSPullToRefreshViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *artistLabel;
@@ -17,6 +20,7 @@
 @property (strong, nonatomic) IBOutlet UISlider *volumeControl;
 @property (strong, nonatomic) IBOutlet UIButton *likeSong;
 @property (strong, nonatomic) IBOutlet UIButton *skipSong;
+@property (strong, nonatomic) SSPullToRefreshView *pullToRefresh;
 
 -(IBAction)handleSkipSong:(id)sender;
 -(IBAction)handleLikeSong:(id)sender;
