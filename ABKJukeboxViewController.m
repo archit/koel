@@ -32,6 +32,9 @@
     [self.volumeControl setThumbImage:[UIImage imageNamed:@"slider-button.png"] forState:UIControlStateNormal];
     [self.volumeControl setMinimumTrackImage:[UIImage imageNamed:@"slider-bg.png"] forState:UIControlStateNormal];
     [self.volumeControl setMaximumTrackImage:[UIImage imageNamed:@"slider-bg.png"] forState:UIControlStateNormal];
+    
+    [(UIScrollView *)self.view setContentSize:CGSizeMake(320, 460)];
+    
     [ABKJukeboxResource getCurrentPlayWithSuccess:^(AFHTTPRequestOperation *operation, id JSON) {
         [self updateViewWithJSON: JSON];
     } failure:nil];
