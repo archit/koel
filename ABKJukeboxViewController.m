@@ -30,21 +30,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [ABKJukeboxResource getCurrentPlayWithSuccess:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-        id song = [JSON valueForKeyPath:@"current_play.song"];
-        NSLog(@"song: %@", song);
-        NSString *songName   = [song valueForKey:@"title"];
-        NSString *artistName = [song valueForKey:@"artist"];
-        NSString *albumName  = [song valueForKey:@"album"];
-        NSString *cdArtUrl   = [song valueForKey:@"cover_url"];
-        if (songName != nil)
-            self.titleLabel.text = songName;
-        if (albumName != nil)
-            self.albumLabel.text = albumName;
-        if (artistName != nil)
-            self.artistLabel.text = artistName;
-        if (cdArtUrl != nil)
-            [self.cdArt setImageWithURL:[NSURL URLWithString:cdArtUrl]];
-    } failure:nil];
+        [self updateViewWithJSON: JSON];
+            } failure:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -66,6 +53,35 @@
 -(IBAction)handleVolume:(UISlider *)sender
 {
     [ABKJukeboxResource setVolume:[sender value]];
+}
+
+-(void)updateViewWithJSON:(id)JSON
+{
+    id song = [JSON valueForKeyPath:@"current_play.song"];
+    [self updateSongDetails:song];
+    [self updateVolume:[[JSON valueForKey:@"volume"] floatValue]];
+}
+
+-(void)updateSongDetails:(id)song
+{
+    NSLog(@"song: %@", song);
+    NSString *songName   = [song valueForKey:@"title"];
+    NSString *artistName = [song valueForKey:@"artist"];
+    NSString *albumName  = [song valueForKey:@"album"];
+    NSString *cdArtUrl   = [song valueForKey:@"cover_url"];
+    if (![[NSNull null] isEqual:songName])
+        self.titleLabel.text = songName;
+    if (![[NSNull null] isEqual:albumName])
+        self.albumLabel.text = albumName;
+    if (![[NSNull null] isEqual:artistName])
+        self.artistLabel.text = artistName;
+    if (![[NSNull null] isEqual:cdArtUrl])
+        [self.cdArt setImageWithURL:[NSURL URLWithString:cdArtUrl]];
+}
+
+-(void)updateVolume:(float)level
+{
+    [self.volumeControl setValue:level];
 }
 
 @end
