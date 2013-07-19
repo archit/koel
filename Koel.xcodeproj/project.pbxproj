@@ -23,6 +23,7 @@
 		79CA489717988DF0000CA6CB /* ffwd.png in Resources */ = {isa = PBXBuildFile; fileRef = 79CA489617988DF0000CA6CB /* ffwd.png */; };
 		79CA489B179899F9000CA6CB /* ABKJukeboxResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CA489A179899F9000CA6CB /* ABKJukeboxResource.m */; };
 		79CA489D1798B867000CA6CB /* wood.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 79CA489C1798B867000CA6CB /* wood.jpg */; };
+		79CA48A01798D313000CA6CB /* ABKSongResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CA489F1798D313000CA6CB /* ABKSongResource.m */; };
 		ECECC31C8A194D14AB8A73E4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DE17703269B4D52A36BA7F0 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,8 @@
 		79CA4899179899F9000CA6CB /* ABKJukeboxResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKJukeboxResource.h; sourceTree = "<group>"; };
 		79CA489A179899F9000CA6CB /* ABKJukeboxResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABKJukeboxResource.m; sourceTree = "<group>"; };
 		79CA489C1798B867000CA6CB /* wood.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wood.jpg; sourceTree = "<group>"; };
+		79CA489E1798D313000CA6CB /* ABKSongResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKSongResource.h; sourceTree = "<group>"; };
+		79CA489F1798D313000CA6CB /* ABKSongResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABKSongResource.m; sourceTree = "<group>"; };
 		8DE17703269B4D52A36BA7F0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -141,6 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				79CA4899179899F9000CA6CB /* ABKJukeboxResource.h */,
+				79CA489E1798D313000CA6CB /* ABKSongResource.h */,
+				79CA489F1798D313000CA6CB /* ABKSongResource.m */,
 				79CA489A179899F9000CA6CB /* ABKJukeboxResource.m */,
 			);
 			name = API;
@@ -256,6 +261,7 @@
 				79BDC26A17977773001EE1A4 /* ABKAppDelegate.m in Sources */,
 				79BDC279179778AC001EE1A4 /* ABKJukeboxViewController.m in Sources */,
 				79CA489B179899F9000CA6CB /* ABKJukeboxResource.m in Sources */,
+				79CA48A01798D313000CA6CB /* ABKSongResource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

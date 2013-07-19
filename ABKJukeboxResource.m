@@ -7,11 +7,14 @@
 //
 
 #import "ABKJukeboxResource.h"
-#import "AFJSONRequestOperation.h"
+#import "AFNetworking.h"
+#import "ABKSongResource.h"
 
 static NSString * const kWarbleJukeboxBaseUrl = @"http://warble.local:3000/jukebox";
 
 @implementation ABKJukeboxResource
+
+@synthesize currentSong = _currentSong;
 
 + (ABKJukeboxResource *)sharedClient {
     static ABKJukeboxResource *_sharedClient = nil;
@@ -41,7 +44,11 @@ static NSString * const kWarbleJukeboxBaseUrl = @"http://warble.local:3000/jukeb
 {
     NSLog(@"Fetching jukebox state...");
     ABKJukeboxResource *client = [ABKJukeboxResource sharedClient];
-    return [client getPath:nil parameters:nil success:success failure:failure];
+    return [client getPath:nil parameters:nil success:^(AFHTTPRequestOperation *operation, id JSON) {
+        // Save latest song received.
+        [client setCurrentSong:[JSON valueForKeyPath:@"current_play"]];
+        success(operation, JSON);
+    } failure:failure];
 }
 
 +(void)setVolume:(int)level
@@ -56,5 +63,13 @@ static NSString * const kWarbleJukeboxBaseUrl = @"http://warble.local:3000/jukeb
     NSLog(@"Skipping song...");
     ABKJukeboxResource *client = [ABKJukeboxResource sharedClient];
     return [client postPath:@"skip" parameters:nil success:nil failure:nil];
+}
+
++(void)likeSong
+{
+    NSLog(@"Liking song...");
+    ABKJukeboxResource *client = [ABKJukeboxResource sharedClient];
+    NSString *songId = [[client currentSong] valueForKey:@"id"];
+    return [ABKSongResource likeSongWithId:songId];
 }
 @end

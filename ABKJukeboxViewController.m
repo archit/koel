@@ -42,7 +42,7 @@
 
 -(IBAction)handleLikeSong:(id)sender
 {
-    
+    [ABKJukeboxResource likeSong];
 }
 
 -(IBAction)handleSkipSong:(id)sender
