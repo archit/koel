@@ -9,7 +9,7 @@
 #import "ABKWarbleResource.h"
 #import "AFNetworking.h"
 
-static NSString * const kWarbleJukeboxBaseUrl = @"http://warble.local:3000";
+static NSString * const kWarbleBaseUrl = @"http://warble.local:3000";
 
 @implementation ABKWarbleResource
 
@@ -20,7 +20,7 @@ static NSString * const kWarbleJukeboxBaseUrl = @"http://warble.local:3000";
     static ABKWarbleResource *_sharedClient = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _sharedClient = [[ABKWarbleResource alloc] initWithBaseURL:[NSURL URLWithString:kWarbleJukeboxBaseUrl]];
+        _sharedClient = [[ABKWarbleResource alloc] initWithBaseURL:[NSURL URLWithString:kWarbleBaseUrl]];
     });
     
     return _sharedClient;
@@ -86,9 +86,9 @@ static NSString * const kWarbleJukeboxBaseUrl = @"http://warble.local:3000";
 {
     NSLog(@"Getting song queue...");
     ABKWarbleResource *client = [ABKWarbleResource sharedClient];
-    [client getPath:nil parameters:nil success:^(AFHTTPRequestOperation *operation, id JSON) {
+    [client getPath:@"jukebox/playlist" parameters:nil success:^(AFHTTPRequestOperation *operation, id JSON) {
         // Save song queue received.
-        [client setSongQueue:[JSON valueForKeyPath:@""]];
+        [client setSongQueue:JSON];
         success(operation, JSON);
     } failure:failure];
 }

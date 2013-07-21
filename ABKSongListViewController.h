@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SSPullToRefresh.h"
 
-@interface ABKSongListViewController : UITableViewController
+@interface ABKSongListViewController : UITableViewController <SSPullToRefreshViewDelegate>
+
+@property (strong, nonatomic) SSPullToRefreshView *pullToRefresh;
+
+-(void)pullToRefreshViewDidStartLoading:(SSPullToRefreshView *)view;
 
 @end

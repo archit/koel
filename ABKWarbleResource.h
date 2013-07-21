@@ -22,7 +22,7 @@
 +(void)skipSong;
 +(void)likeSong;
 
-+(NSArray *)getSongQueue;
++(NSArray *)songQueue;
 +(NSUInteger)getQueueLength;
 +(void)getQueueWithSuccess:(void (^)(AFHTTPRequestOperation *operation, id JSON))success
                    failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;

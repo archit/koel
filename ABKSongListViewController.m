@@ -15,6 +15,8 @@
 
 @implementation ABKSongListViewController
 
+@synthesize pullToRefresh = _pullToRefresh;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -33,9 +35,10 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
+    self.pullToRefresh = [[SSPullToRefreshView alloc] initWithScrollView:(UIScrollView *)self.view delegate:(id)self];
+
     [ABKWarbleResource getQueueWithSuccess:^(AFHTTPRequestOperation *operation, id JSON) {
-        
+        [(UITableView *)self.view reloadData];
     } failure:nil];
 }
 
@@ -66,7 +69,8 @@
     
     // Configure the cell...
     UILabel *cellLabel = (UILabel *)[cell viewWithTag:1];
-    cellLabel.text = [[[ABKWarbleResource getSongQueue] objectAtIndex:indexPath.row] valueForKey:@"title"];
+    NSDictionary *play = [[ABKWarbleResource songQueue] objectAtIndex:[indexPath row]];
+    cellLabel.text =  [play valueForKeyPath:@"song.title"];
     
     return cell;
 }
@@ -121,6 +125,16 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+}
+
+#pragma mark - SSPullToRefresh delegate
+
+-(void)pullToRefreshViewDidStartLoading:(SSPullToRefreshView *)view
+{
+    [ABKWarbleResource getQueueWithSuccess:^(AFHTTPRequestOperation *operation, id JSON) {
+        [(UITableView *)self.view reloadData];
+        [view finishLoading];
+    } failure:nil];
 }
 
 @end
