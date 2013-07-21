@@ -69,8 +69,10 @@
     
     // Configure the cell...
     UILabel *cellLabel = (UILabel *)[cell viewWithTag:1];
+    UIImageView *playTypeImage = (UIImageView *)[cell viewWithTag:2];
     NSDictionary *play = [[ABKWarbleResource songQueue] objectAtIndex:[indexPath row]];
     cellLabel.text =  [play valueForKeyPath:@"song.title"];
+    [playTypeImage setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png", [play valueForKeyPath:@"song.source"]]]];
     
     return cell;
 }

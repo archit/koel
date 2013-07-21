@@ -186,13 +186,21 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" image="youtube.png" translatesAutoresizingMaskIntoConstraints="NO" id="usl-GI-Izh">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="24" id="YsB-ZH-9Ae"/>
+                                                <constraint firstAttribute="height" constant="24" id="e3g-ya-tBI"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
                                     <constraint firstItem="IPG-an-Qff" firstAttribute="leading" secondItem="3wZ-3y-ysE" secondAttribute="leading" constant="20" type="default" id="8ai-hz-AmW"/>
-                                    <constraint firstAttribute="trailing" secondItem="IPG-an-Qff" secondAttribute="trailing" constant="20" type="default" id="NoL-v5-4Ng"/>
-                                    <constraint firstItem="IPG-an-Qff" firstAttribute="top" secondItem="3wZ-3y-ysE" secondAttribute="top" constant="11" id="zFd-yb-GJW"/>
+                                    <constraint firstAttribute="trailing" secondItem="usl-GI-Izh" secondAttribute="trailing" constant="20" type="default" id="NPj-bq-rgw"/>
+                                    <constraint firstItem="IPG-an-Qff" firstAttribute="top" secondItem="3wZ-3y-ysE" secondAttribute="top" constant="11" id="YE9-Um-wEE"/>
+                                    <constraint firstItem="usl-GI-Izh" firstAttribute="centerY" secondItem="3wZ-3y-ysE" secondAttribute="centerY" type="default" id="r5u-bp-DzC"/>
+                                    <constraint firstItem="usl-GI-Izh" firstAttribute="leading" secondItem="IPG-an-Qff" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="sKV-bc-Iwa"/>
                                 </constraints>
                             </tableViewCell>
                         </prototypes>
@@ -212,7 +220,31 @@
         <image name="empty-cover.png" width="320" height="320"/>
         <image name="ffwd.png" width="24" height="24"/>
         <image name="like.png" width="24" height="24"/>
+        <image name="youtube.png" width="64" height="64"/>
     </resources>
+    <classes>
+        <class className="ABKJukeboxViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ABKJukeboxViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="handleLikeSong:"/>
+                <relationship kind="action" name="handleSkipSong:"/>
+                <relationship kind="action" name="handleVolume:"/>
+                <relationship kind="outlet" name="albumLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="artistLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="cdArt" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="likeSong" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="skipSong" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="volumeControl" candidateClass="UISlider"/>
+            </relationships>
+        </class>
+        <class className="ABKSongListViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ABKSongListViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
