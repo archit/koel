@@ -20,14 +20,15 @@
 		79CA489317988187000CA6CB /* like.png in Resources */ = {isa = PBXBuildFile; fileRef = 79CA489217988187000CA6CB /* like.png */; };
 		79CA489517988196000CA6CB /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 79CA489417988196000CA6CB /* logo.png */; };
 		79CA489717988DF0000CA6CB /* ffwd.png in Resources */ = {isa = PBXBuildFile; fileRef = 79CA489617988DF0000CA6CB /* ffwd.png */; };
-		79CA489B179899F9000CA6CB /* ABKJukeboxResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CA489A179899F9000CA6CB /* ABKJukeboxResource.m */; };
+		79CA489B179899F9000CA6CB /* ABKWarbleResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CA489A179899F9000CA6CB /* ABKWarbleResource.m */; };
 		79CA489D1798B867000CA6CB /* wood.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 79CA489C1798B867000CA6CB /* wood.jpg */; };
-		79CA48A01798D313000CA6CB /* ABKSongResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CA489F1798D313000CA6CB /* ABKSongResource.m */; };
 		79CA48A51799C514000CA6CB /* empty-cover.png in Resources */ = {isa = PBXBuildFile; fileRef = 79CA48A41799C514000CA6CB /* empty-cover.png */; };
 		79CA48A71799EB36000CA6CB /* volume-knob.png in Resources */ = {isa = PBXBuildFile; fileRef = 79CA48A61799EB36000CA6CB /* volume-knob.png */; };
 		79CA48A91799EC58000CA6CB /* slider-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 79CA48A81799EC58000CA6CB /* slider-button.png */; };
 		79CA48AB1799EC73000CA6CB /* slider-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 79CA48AA1799EC73000CA6CB /* slider-bg.png */; };
 		79CA48AD179A0809000CA6CB /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79CA48AC179A0809000CA6CB /* MainStoryboard.storyboard */; };
+		79CA48B0179B663F000CA6CB /* ABKSongListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CA48AF179B663F000CA6CB /* ABKSongListViewController.m */; };
+		79CA48B6179B7BD4000CA6CB /* ABKFlipSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CA48B5179B7BD3000CA6CB /* ABKFlipSegue.m */; };
 		ECECC31C8A194D14AB8A73E4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DE17703269B4D52A36BA7F0 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -51,16 +52,18 @@
 		79CA489217988187000CA6CB /* like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like.png; sourceTree = "<group>"; };
 		79CA489417988196000CA6CB /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		79CA489617988DF0000CA6CB /* ffwd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ffwd.png; sourceTree = "<group>"; };
-		79CA4899179899F9000CA6CB /* ABKJukeboxResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKJukeboxResource.h; sourceTree = "<group>"; };
-		79CA489A179899F9000CA6CB /* ABKJukeboxResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABKJukeboxResource.m; sourceTree = "<group>"; };
+		79CA4899179899F9000CA6CB /* ABKWarbleResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKWarbleResource.h; sourceTree = "<group>"; };
+		79CA489A179899F9000CA6CB /* ABKWarbleResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABKWarbleResource.m; sourceTree = "<group>"; };
 		79CA489C1798B867000CA6CB /* wood.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wood.jpg; sourceTree = "<group>"; };
-		79CA489E1798D313000CA6CB /* ABKSongResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKSongResource.h; sourceTree = "<group>"; };
-		79CA489F1798D313000CA6CB /* ABKSongResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABKSongResource.m; sourceTree = "<group>"; };
 		79CA48A41799C514000CA6CB /* empty-cover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "empty-cover.png"; sourceTree = "<group>"; };
 		79CA48A61799EB36000CA6CB /* volume-knob.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "volume-knob.png"; sourceTree = "<group>"; };
 		79CA48A81799EC58000CA6CB /* slider-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-button.png"; sourceTree = "<group>"; };
 		79CA48AA1799EC73000CA6CB /* slider-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-bg.png"; sourceTree = "<group>"; };
 		79CA48AC179A0809000CA6CB /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		79CA48AE179B663F000CA6CB /* ABKSongListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKSongListViewController.h; sourceTree = SOURCE_ROOT; };
+		79CA48AF179B663F000CA6CB /* ABKSongListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABKSongListViewController.m; sourceTree = SOURCE_ROOT; };
+		79CA48B4179B7BD3000CA6CB /* ABKFlipSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFlipSegue.h; sourceTree = "<group>"; };
+		79CA48B5179B7BD3000CA6CB /* ABKFlipSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABKFlipSegue.m; sourceTree = "<group>"; };
 		8DE17703269B4D52A36BA7F0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -113,6 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				79CA48AC179A0809000CA6CB /* MainStoryboard.storyboard */,
+				79CA48B4179B7BD3000CA6CB /* ABKFlipSegue.h */,
+				79CA48B5179B7BD3000CA6CB /* ABKFlipSegue.m */,
 				79CA48A31799C4AC000CA6CB /* Views */,
 				79CA4898179899A2000CA6CB /* API */,
 				79BDC26817977773001EE1A4 /* ABKAppDelegate.h */,
@@ -154,10 +159,8 @@
 		79CA4898179899A2000CA6CB /* API */ = {
 			isa = PBXGroup;
 			children = (
-				79CA4899179899F9000CA6CB /* ABKJukeboxResource.h */,
-				79CA489E1798D313000CA6CB /* ABKSongResource.h */,
-				79CA489F1798D313000CA6CB /* ABKSongResource.m */,
-				79CA489A179899F9000CA6CB /* ABKJukeboxResource.m */,
+				79CA4899179899F9000CA6CB /* ABKWarbleResource.h */,
+				79CA489A179899F9000CA6CB /* ABKWarbleResource.m */,
 			);
 			name = API;
 			path = ..;
@@ -168,6 +171,8 @@
 			children = (
 				79BDC276179778AC001EE1A4 /* ABKJukeboxViewController.h */,
 				79BDC277179778AC001EE1A4 /* ABKJukeboxViewController.m */,
+				79CA48AE179B663F000CA6CB /* ABKSongListViewController.h */,
+				79CA48AF179B663F000CA6CB /* ABKSongListViewController.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -285,8 +290,9 @@
 				79BDC26617977773001EE1A4 /* main.m in Sources */,
 				79BDC26A17977773001EE1A4 /* ABKAppDelegate.m in Sources */,
 				79BDC279179778AC001EE1A4 /* ABKJukeboxViewController.m in Sources */,
-				79CA489B179899F9000CA6CB /* ABKJukeboxResource.m in Sources */,
-				79CA48A01798D313000CA6CB /* ABKSongResource.m in Sources */,
+				79CA489B179899F9000CA6CB /* ABKWarbleResource.m in Sources */,
+				79CA48B0179B663F000CA6CB /* ABKSongListViewController.m in Sources */,
+				79CA48B6179B7BD4000CA6CB /* ABKFlipSegue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

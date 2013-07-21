@@ -7,7 +7,7 @@
 //
 
 #import "ABKJukeboxViewController.h"
-#import "ABKJukeboxResource.h"
+#import "ABKWarbleResource.h"
 #import "UIImageView+AFNetworking.h"
 #import "SSPullToRefresh.h"
 
@@ -35,7 +35,7 @@
     [(UIScrollView *)self.view setContentSize:CGSizeMake(320, 500)];
     self.pullToRefresh = [[SSPullToRefreshView alloc] initWithScrollView:(UIScrollView *)self.view delegate:(id)self];
     
-    [ABKJukeboxResource getCurrentPlayWithSuccess:^(AFHTTPRequestOperation *operation, id JSON) {
+    [ABKWarbleResource getCurrentPlayWithSuccess:^(AFHTTPRequestOperation *operation, id JSON) {
         [self updateViewWithJSON: JSON];
     } failure:nil];
 }
@@ -47,7 +47,7 @@
     self.pullToRefresh = nil;
 }
 
-#pragma mark -- UI updaters
+#pragma mark - UI updaters
 
 -(void)updateViewWithJSON:(id)JSON
 {
@@ -78,26 +78,26 @@
     [self.volumeControl setValue:level animated:YES];
 }
 
-#pragma mark -- Event Handlers
+#pragma mark - Event Handlers
 
 -(IBAction)handleLikeSong:(id)sender
 {
-    [ABKJukeboxResource likeSong];
+    [ABKWarbleResource likeSong];
 }
 
 -(IBAction)handleSkipSong:(id)sender
 {
-    [ABKJukeboxResource skipSong];
+    [ABKWarbleResource skipSong];
 }
 
 -(IBAction)handleVolume:(UISlider *)sender
 {
-    [ABKJukeboxResource setVolume:[sender value]];
+    [ABKWarbleResource setVolume:[sender value]];
 }
 
 -(void)pullToRefreshViewDidStartLoading:(SSPullToRefreshView *)view
 {
-    [ABKJukeboxResource getCurrentPlayWithSuccess:^(AFHTTPRequestOperation *operation, id JSON) {
+    [ABKWarbleResource getCurrentPlayWithSuccess:^(AFHTTPRequestOperation *operation, id JSON) {
         [self updateViewWithJSON: JSON];
         [view finishLoading];
     } failure:nil];
