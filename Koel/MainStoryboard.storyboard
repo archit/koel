@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="JcD-uQ-2BF">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--Jukebox View Controller-->
+        <scene sceneID="V4e-a1-Cjh">
+            <objects>
+                <viewController id="JcD-uQ-2BF" customClass="ABKJukeboxViewController" sceneMemberID="viewController">
+                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" pagingEnabled="YES" indicatorStyle="black" id="JeH-l3-SCj">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wd9-g7-1fg">
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" image="empty-cover.png" translatesAutoresizingMaskIntoConstraints="NO" id="n4S-6G-3FV">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="320" type="user" id="HPT-XN-Cfw"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftA-aL-zGc">
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Song Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y23-Zp-Zt8">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" type="user" id="JGN-v5-ZyU"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Artist Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ZK-n3-IgH">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="15" type="user" id="PuZ-7H-0GM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Album Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GCk-pI-BhJ">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="13" type="user" id="o2y-2X-Vlz"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="NiK-jo-doN">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="WbP-Th-dX4"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="handleVolume:" destination="JcD-uQ-2BF" eventType="valueChanged" id="7KZ-XN-PwE"/>
+                                        </connections>
+                                    </slider>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRm-8b-GY1">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="23" id="MBq-Il-Lcf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" image="ffwd.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="handleSkipSong:" destination="JcD-uQ-2BF" eventType="touchUpInside" id="tcy-iE-fXd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3RJ-7R-xh0">
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" image="like.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="handleLikeSong:" destination="JcD-uQ-2BF" eventType="touchUpInside" id="PUQ-Rg-mNo"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="3RJ-7R-xh0" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="0Cs-rn-vug"/>
+                                    <constraint firstItem="ftA-aL-zGc" firstAttribute="top" secondItem="Wd9-g7-1fg" secondAttribute="top" constant="330" type="user" id="8ep-oj-ezQ"/>
+                                    <constraint firstItem="n4S-6G-3FV" firstAttribute="top" secondItem="Wd9-g7-1fg" secondAttribute="top" constant="40" type="user" id="9qz-mw-hiE"/>
+                                    <constraint firstAttribute="height" constant="500" id="A6h-po-5Rp"/>
+                                    <constraint firstAttribute="bottom" secondItem="y23-Zp-Zt8" secondAttribute="bottom" constant="104" id="G0R-0x-T4H"/>
+                                    <constraint firstAttribute="trailing" secondItem="ftA-aL-zGc" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="IF3-WZ-uKI"/>
+                                    <constraint firstAttribute="bottom" secondItem="7ZK-n3-IgH" secondAttribute="bottom" constant="86" id="P1G-cP-gy0"/>
+                                    <constraint firstItem="y23-Zp-Zt8" firstAttribute="centerX" secondItem="n4S-6G-3FV" secondAttribute="centerX" type="user" id="QxR-Uf-nh6"/>
+                                    <constraint firstItem="GCk-pI-BhJ" firstAttribute="leading" secondItem="Wd9-g7-1fg" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Rad-cf-BLw"/>
+                                    <constraint firstItem="y23-Zp-Zt8" firstAttribute="leading" secondItem="Wd9-g7-1fg" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="WzE-wx-CRD"/>
+                                    <constraint firstAttribute="trailing" secondItem="y23-Zp-Zt8" secondAttribute="trailing" constant="20" symbolic="YES" type="user" id="YDV-KD-tSV"/>
+                                    <constraint firstAttribute="trailing" secondItem="GCk-pI-BhJ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="bag-sc-aes"/>
+                                    <constraint firstAttribute="bottom" secondItem="GCk-pI-BhJ" secondAttribute="bottom" constant="73" id="dTT-Ob-v3g"/>
+                                    <constraint firstAttribute="bottom" secondItem="NiK-jo-doN" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="dcD-v9-Xcd"/>
+                                    <constraint firstAttribute="bottom" secondItem="IRm-8b-GY1" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="f7p-An-Gok"/>
+                                    <constraint firstItem="7ZK-n3-IgH" firstAttribute="leading" secondItem="Wd9-g7-1fg" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="iqp-a4-dMm"/>
+                                    <constraint firstAttribute="trailing" secondItem="NiK-jo-doN" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="jCX-7h-Zgi"/>
+                                    <constraint firstItem="3RJ-7R-xh0" firstAttribute="leading" secondItem="Wd9-g7-1fg" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="mk9-PQ-qcR"/>
+                                    <constraint firstAttribute="trailing" secondItem="7ZK-n3-IgH" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="oNM-45-b3N"/>
+                                    <constraint firstItem="n4S-6G-3FV" firstAttribute="leading" secondItem="Wd9-g7-1fg" secondAttribute="leading" type="user" id="r9d-ga-YRK"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="NiK-jo-doN" secondAttribute="bottom" constant="20" type="user" id="w23-Kn-44e"/>
+                                    <constraint firstAttribute="width" constant="320" type="user" id="yFv-Zj-1ra"/>
+                                    <constraint firstItem="IRm-8b-GY1" firstAttribute="leading" secondItem="Wd9-g7-1fg" secondAttribute="leading" constant="57" id="yrj-ww-XUt"/>
+                                </constraints>
+                                <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Wd9-g7-1fg" firstAttribute="bottom" secondItem="JeH-l3-SCj" secondAttribute="bottom" type="default" id="7Qf-l6-sCj"/>
+                            <constraint firstItem="Wd9-g7-1fg" firstAttribute="leading" secondItem="JeH-l3-SCj" secondAttribute="leading" type="default" id="Ixl-zq-0Fv"/>
+                            <constraint firstItem="Wd9-g7-1fg" firstAttribute="top" secondItem="JeH-l3-SCj" secondAttribute="top" constant="-40" id="bU5-wK-Yle"/>
+                            <constraint firstItem="Wd9-g7-1fg" firstAttribute="trailing" secondItem="JeH-l3-SCj" secondAttribute="trailing" type="default" id="l0U-80-yQ3"/>
+                        </constraints>
+                        <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                        <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    </scrollView>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="albumLabel" destination="GCk-pI-BhJ" id="4K6-qL-fou"/>
+                        <outlet property="artistLabel" destination="7ZK-n3-IgH" id="Lw4-9R-CtA"/>
+                        <outlet property="cdArt" destination="n4S-6G-3FV" id="ecd-Ni-Tag"/>
+                        <outlet property="likeSong" destination="3RJ-7R-xh0" id="SNP-Uj-uMy"/>
+                        <outlet property="skipSong" destination="IRm-8b-GY1" id="YeG-kM-yeM"/>
+                        <outlet property="titleLabel" destination="y23-Zp-Zt8" id="LLh-Pj-Sf0"/>
+                        <outlet property="volumeControl" destination="NiK-jo-doN" id="5Rx-QJ-5o0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eA5-cx-2iI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="113" y="-110"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="empty-cover.png" width="320" height="320"/>
+        <image name="ffwd.png" width="24" height="24"/>
+        <image name="like.png" width="24" height="24"/>
+    </resources>
+    <classes>
+        <class className="ABKJukeboxViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ABKJukeboxViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="handleLikeSong:"/>
+                <relationship kind="action" name="handleSkipSong:"/>
+                <relationship kind="action" name="handleVolume:"/>
+                <relationship kind="outlet" name="albumLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="artistLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="cdArt" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="likeSong" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="skipSong" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="volumeControl" candidateClass="UISlider"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

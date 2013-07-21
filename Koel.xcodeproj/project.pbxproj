@@ -17,7 +17,6 @@
 		79BDC26E17977773001EE1A4 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79BDC26D17977773001EE1A4 /* Default@2x.png */; };
 		79BDC27017977773001EE1A4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79BDC26F17977773001EE1A4 /* Default-568h@2x.png */; };
 		79BDC279179778AC001EE1A4 /* ABKJukeboxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BDC277179778AC001EE1A4 /* ABKJukeboxViewController.m */; };
-		79BDC27A179778AC001EE1A4 /* ABKJukeboxViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79BDC278179778AC001EE1A4 /* ABKJukeboxViewController.xib */; };
 		79CA489317988187000CA6CB /* like.png in Resources */ = {isa = PBXBuildFile; fileRef = 79CA489217988187000CA6CB /* like.png */; };
 		79CA489517988196000CA6CB /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 79CA489417988196000CA6CB /* logo.png */; };
 		79CA489717988DF0000CA6CB /* ffwd.png in Resources */ = {isa = PBXBuildFile; fileRef = 79CA489617988DF0000CA6CB /* ffwd.png */; };
@@ -28,6 +27,7 @@
 		79CA48A71799EB36000CA6CB /* volume-knob.png in Resources */ = {isa = PBXBuildFile; fileRef = 79CA48A61799EB36000CA6CB /* volume-knob.png */; };
 		79CA48A91799EC58000CA6CB /* slider-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 79CA48A81799EC58000CA6CB /* slider-button.png */; };
 		79CA48AB1799EC73000CA6CB /* slider-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 79CA48AA1799EC73000CA6CB /* slider-bg.png */; };
+		79CA48AD179A0809000CA6CB /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79CA48AC179A0809000CA6CB /* MainStoryboard.storyboard */; };
 		ECECC31C8A194D14AB8A73E4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DE17703269B4D52A36BA7F0 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +48,6 @@
 		79BDC26F17977773001EE1A4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		79BDC276179778AC001EE1A4 /* ABKJukeboxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABKJukeboxViewController.h; path = ../ABKJukeboxViewController.h; sourceTree = "<group>"; };
 		79BDC277179778AC001EE1A4 /* ABKJukeboxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ABKJukeboxViewController.m; path = ../ABKJukeboxViewController.m; sourceTree = "<group>"; };
-		79BDC278179778AC001EE1A4 /* ABKJukeboxViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ABKJukeboxViewController.xib; path = ../ABKJukeboxViewController.xib; sourceTree = "<group>"; };
 		79CA489217988187000CA6CB /* like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like.png; sourceTree = "<group>"; };
 		79CA489417988196000CA6CB /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		79CA489617988DF0000CA6CB /* ffwd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ffwd.png; sourceTree = "<group>"; };
@@ -61,6 +60,7 @@
 		79CA48A61799EB36000CA6CB /* volume-knob.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "volume-knob.png"; sourceTree = "<group>"; };
 		79CA48A81799EC58000CA6CB /* slider-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-button.png"; sourceTree = "<group>"; };
 		79CA48AA1799EC73000CA6CB /* slider-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-bg.png"; sourceTree = "<group>"; };
+		79CA48AC179A0809000CA6CB /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		8DE17703269B4D52A36BA7F0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -112,6 +112,7 @@
 		79BDC25F17977773001EE1A4 /* Koel */ = {
 			isa = PBXGroup;
 			children = (
+				79CA48AC179A0809000CA6CB /* MainStoryboard.storyboard */,
 				79CA48A31799C4AC000CA6CB /* Views */,
 				79CA4898179899A2000CA6CB /* API */,
 				79BDC26817977773001EE1A4 /* ABKAppDelegate.h */,
@@ -167,7 +168,6 @@
 			children = (
 				79BDC276179778AC001EE1A4 /* ABKJukeboxViewController.h */,
 				79BDC277179778AC001EE1A4 /* ABKJukeboxViewController.m */,
-				79BDC278179778AC001EE1A4 /* ABKJukeboxViewController.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -230,7 +230,6 @@
 				79BDC26C17977773001EE1A4 /* Default.png in Resources */,
 				79BDC26E17977773001EE1A4 /* Default@2x.png in Resources */,
 				79BDC27017977773001EE1A4 /* Default-568h@2x.png in Resources */,
-				79BDC27A179778AC001EE1A4 /* ABKJukeboxViewController.xib in Resources */,
 				79CA489317988187000CA6CB /* like.png in Resources */,
 				79CA489517988196000CA6CB /* logo.png in Resources */,
 				79CA489717988DF0000CA6CB /* ffwd.png in Resources */,
@@ -239,6 +238,7 @@
 				79CA48A71799EB36000CA6CB /* volume-knob.png in Resources */,
 				79CA48A91799EC58000CA6CB /* slider-button.png in Resources */,
 				79CA48AB1799EC73000CA6CB /* slider-bg.png in Resources */,
+				79CA48AD179A0809000CA6CB /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
