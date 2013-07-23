@@ -26,5 +26,6 @@
 -(IBAction)handleLikeSong:(id)sender;
 -(IBAction)handleVolume:(id)sender;
 
+-(void)viewWillAppear:(BOOL)animated;
 
 @end

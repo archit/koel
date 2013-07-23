@@ -13,6 +13,8 @@
 
 @property (strong, nonatomic) SSPullToRefreshView *pullToRefresh;
 
--(void)pullToRefreshViewDidStartLoading:(SSPullToRefreshView *)view;
+- (void)pullToRefreshViewDidStartLoading:(SSPullToRefreshView *)view;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)showSongPicker:(id)sender;
 
 @end

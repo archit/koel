@@ -48,6 +48,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:NO];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -131,12 +136,16 @@
 
 #pragma mark - SSPullToRefresh delegate
 
--(void)pullToRefreshViewDidStartLoading:(SSPullToRefreshView *)view
+- (void)pullToRefreshViewDidStartLoading:(SSPullToRefreshView *)view
 {
     [ABKWarbleResource getQueueWithSuccess:^(AFHTTPRequestOperation *operation, id JSON) {
         [(UITableView *)self.view reloadData];
         [view finishLoading];
     } failure:nil];
 }
-
+    
+- (void)showSongPicker:(id)sender
+{
+    NSLog(@"BLARGH!");
+}
 @end

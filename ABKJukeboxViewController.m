@@ -24,6 +24,8 @@
     return self;
 }
 
+#pragma mark - UI updaters
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -47,7 +49,10 @@
     self.pullToRefresh = nil;
 }
 
-#pragma mark - UI updaters
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:YES];
+}
 
 -(void)updateViewWithJSON:(id)JSON
 {
