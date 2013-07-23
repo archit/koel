@@ -7,6 +7,7 @@
 //
 
 #import "ABKFlipSegue.h"
+#import "ABKSongListViewController.h"
 
 @implementation ABKFlipSegue
 
@@ -14,9 +15,16 @@
     UIViewController *src = (UIViewController *)self.sourceViewController;
     UIViewController *dst = (UIViewController *)self.destinationViewController;
     
+    UIViewAnimationOptions animation;
+    if ([src isKindOfClass:[ABKSongListViewController class]]) {
+        animation = UIViewAnimationOptionTransitionFlipFromLeft;
+    } else {
+        animation = UIViewAnimationOptionTransitionFlipFromRight;
+    }
+
     [UIView transitionWithView:src.navigationController.view
                       duration:0.4
-                       options:UIViewAnimationOptionTransitionFlipFromRight
+                       options:animation
                     animations:^{
                       [src.navigationController pushViewController:dst animated:NO];
                     }
